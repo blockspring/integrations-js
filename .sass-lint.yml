@@ -1,0 +1,13 @@
+options:
+  max-warnings: 0
+files:
+  include:
+    - 'src/styles/**/*.scss'
+rules:
+  property-sort-order: 0
+  no-color-literals: 0
+  quotes: 2
+  nesting-depth:
+    - 2
+    -
+      max-depth: 4

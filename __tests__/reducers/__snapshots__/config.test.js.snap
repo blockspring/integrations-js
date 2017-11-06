@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`configReducer data 1`] = `
+Object {
+  "siteId": "pk_efh893f",
+}
+`;
+
+exports[`configReducer default 1`] = `null`;

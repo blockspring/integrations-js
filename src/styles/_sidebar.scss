@@ -1,0 +1,20 @@
+.ijs-side-bar {
+  position: fixed;
+  background: #fff;
+  border: 1px solid rgb(163, 163, 163);
+  border-right: 0;
+
+  width: $sidebar-width;
+
+  top: 0;
+  bottom: 0;
+  right: calc(#{$icon-bar-icon-size} + #{$icon-bar-padding} + #{$icon-bar-padding} + 2px);
+
+  display: none;
+}
+
+.ijs-side-bar-open {
+  .ijs-side-bar {
+    display: block;
+  }
+}

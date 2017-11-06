@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`store should have proper default state 1`] = `
+Object {
+  "config": null,
+  "context": Object {},
+  "currentIntegrationId": null,
+  "sessionId": null,
+  "siteId": null,
+  "user": null,
+}
+`;

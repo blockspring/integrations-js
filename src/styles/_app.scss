@@ -1,0 +1,5 @@
+.ijs-app,
+.ijs-app > * {
+  // one less than the max of 2147483647 (which intercom uses)
+  z-index: 2147483646 !important; // sass-lint:disable-line no-important
+}

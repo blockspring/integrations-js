@@ -1,0 +1,9 @@
+// Import this file instead of main.scss
+// if you want to namespace all of your styles.
+// You may want to do this if your app is embeded on other sites
+
+$namespace: '#integrations-js';
+
+#{$namespace} {
+  @import 'main';
+}

@@ -1,0 +1,10 @@
+/node_modules
+/yarn-error.log
+.DS_Store
+/coverage
+/dist
+.eslintcache
+.env.development
+.env.production
+deploy.sh
+*.tgz

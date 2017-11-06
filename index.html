@@ -1,0 +1,203 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IntegrationsJs Test Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body style="background-color: rgba(0, 45, 0, .5)">
+  <script>
+    (function() {
+      // create a queue
+      var integrations = window.integrations = window.integrations || [];
+
+      // Don't do this once loaded already
+      if (integrations.loaded) { return; }
+
+      // Ignore loading more that once
+      if (integrations.invoked) {
+        return;
+      }
+
+      // Prevent double load
+      integrations.invoked = true;
+
+      // Setup queue
+      integrations.methods =  ['identify', 'setContext', 'set', 'get', 'do'];
+
+      integrations.factory = function (method) {
+        return function () {
+          var args = Array.prototype.slice.call(arguments);
+          args.unshift(method);
+          integrations.push(args);
+          return integrations;
+        };
+      };
+
+      // load the js
+      for (var i = 0; i < integrations.methods.length; i++) {
+        var key = integrations.methods[i];
+        integrations[key] = integrations.factory(key);
+      }
+
+      integrations.load = function(siteId) {
+        integrations.siteId = siteId;
+
+        // Create an async script element
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = '/dev/bundle.js';
+
+        // Insert our script next to the first script element.
+        var first = document.getElementsByTagName('script')[0];
+        first.parentNode.insertBefore(script, first);
+      };
+
+      // Load
+      integrations.load('pk_demo_key');
+
+      // Identify the user
+      integrations.identify({
+        userId: '3234oji'
+      });
+
+      integrations.setContext({
+        people: [{
+          email: 'jason@tokoph.net',
+          name: 'Jason Tokoph'
+        }],
+        title: 'Random Page',
+        description: 'Longer description',
+        datasets: {
+          foo: [['name','age'],['jason', 29]]
+        }
+      });
+    })();
+  </script>
+
+  <button id="all">All</button>
+  <button id="datasets">Datasets</button>
+  <button id="people">People</button>
+  <button id="basic">Basic</button>
+  <button id="toggle-people">Toggle People</button>
+  <button id="multiple-people">Multiple People</button>
+  <button id="none">None</button>
+  <script>
+    document.getElementById('all').addEventListener('click', function () {
+      integrations.setContext({
+        people: [{
+          email: 'jason@tokoph.net',
+          name: 'Jason Tokoph'
+        }],
+        title: 'Random Page',
+        description: 'Longer description',
+        datasets: {
+          foo: [['name', 'age'], ['jason', 29]]
+        }
+      });
+    });
+    document.getElementById('none').addEventListener('click', function () {
+      integrations.setContext({});
+    });
+    document.getElementById('datasets').addEventListener('click', function() {
+      integrations.setContext({
+        datasets: {
+          Foo: [['name', 'age'], ['foo', 29]],
+          Bar: [['name', 'age'], ['bar', 33]]
+        }
+      });
+    });
+    document.getElementById('people').addEventListener('click', function () {
+      integrations.setContext({
+        people: [{
+          email: 'jason@tokoph.net',
+          name: 'Jason Tokoph'
+        }],
+      });
+    });
+
+    document.getElementById('toggle-people').addEventListener('click', function () {
+      var options = [
+        {
+          email: 'jason@tokoph.net',
+          name: 'Jason Tokoph'
+        },
+        {
+          email: 'paul@blockspring.com'
+        },
+        {
+          email: 'jtokoph@gmail.com'
+        }
+      ];
+
+      integrations.setContext({
+        people: [options[Math.floor(Math.random()*options.length)]],
+      });
+    });
+
+    document.getElementById('multiple-people').addEventListener('click', function () {
+      integrations.setContext({
+        people: [{
+          email: 'jason@tokoph.net',
+          name: 'Jason Tokoph'
+        }, {
+          email: 'paul@blockspring.com'
+        }, {
+          email: 'jtokoph@gmail.com'
+        }],
+      });
+    });
+
+    document.getElementById('basic').addEventListener('click', function () {
+      integrations.setContext({
+        title: 'Random Page',
+        description: 'Longer description',
+      });
+    });
+  </script>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+  <div>Test 1</div>
+  <div>Test 2</div>
+  <div>Test 3</div>
+</body>
+</html>

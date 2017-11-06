@@ -1,0 +1,241 @@
+.ijs-card {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  .ijs-oauth-btn {
+    text-decoration: none;
+    width: 100%;
+    background-color: #fcfcfc;
+    border: 1px solid #d3d3d3;
+    box-sizing: border-box;
+    min-height: 35px;
+    display: inline-block;
+    padding: .9em 0;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: .2px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: .2em;
+    box-shadow: 0 1px 1px rgba(117, 117, 117, .5);
+    transition: background .3s ease, border-color .3s ease;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #444;
+
+    &:hover {
+      box-shadow: 0 3px 8px rgba(117, 117, 117, .5);
+      user-select: none;
+    }
+
+    &:active {
+      box-shadow: 0 1px 1px #757575;
+      background: #f8f8f8;
+      color: #fff;
+      user-select: none;
+    }
+
+    .ijs-oauth-btn-icon {
+      max-height: 18px;
+      max-width: 18px;
+      margin-right: 8px;
+    }
+  }
+
+  .ijs-oauth-header {
+    text-align: center;
+  }
+
+  .ijs-card-header {
+    background: #1b75be;
+    color: #828282;
+    padding: 10px;
+    font-size: 14px;
+
+    .ijs-card-header-action {
+      background: transparent;
+      border: 0;
+      float: right;
+    }
+  }
+
+  .ijs-card-body {
+    flex: 1;
+    overflow: scroll;
+
+    .ijs-card-section {
+      margin: 10px;
+
+      .ijs-card-section-header {
+        font-size: 11px;
+        font-weight: 500;
+        color: #808080;
+        margin-bottom: 5px;
+      }
+    }
+
+    .ijs-card-body-header {
+      border-bottom: 1px solid #d3d3d3;
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 10px;
+    }
+  }
+
+  .ijs-card-header-arrows {
+    float: right;
+    padding-top: 5px;
+    padding-right: 8px;
+  }
+}
+
+.ijs-results {
+  background-color: #e2e4e6;
+  box-shadow: 0 1px 1px 0 #c4c9cc;
+  box-sizing: border-box;
+  display: block;
+  height: 2pc;
+  margin-top: 8px;
+  max-width: 300px;
+  padding: 7px 7px 7px 11px;
+  position: relative;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.ijs-arrow {
+  border: solid #808080;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  outline: none;
+}
+
+.ijs-arrow-right {
+  transform: rotate(-45deg);
+  cursor: pointer;
+  margin-left: 5;
+}
+
+.ijs-arrow-left {
+  transform: rotate(135deg);
+  cursor: pointer;
+}
+
+.ijs-form-select {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  padding-bottom: 4px;
+  border-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: none;
+  // -webkit-appearance: none;
+}
+
+.ijs-card-media {
+  display: flex;
+  flex-direction: row;
+
+  .ijs-card-media-left {
+    width: 36px;
+    margin: 0 10px 0 0;
+  }
+
+  .ijs-card-media-image {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 24px;
+  }
+
+  .ijs-card-media-body {
+    flex: 1;
+  }
+}
+
+.ijs-card-social-icon {
+  height: 36px;
+}
+
+.ijs-card-action {
+  background: none;
+  color: $primary-color;
+  border: 0;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 0;
+  font-size: 14px;
+}
+
+input {
+  &[type] {
+    &.ijs-form-input {
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      width: 100%;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+textarea, {
+  &.ijs-form-input {
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    padding-bottom: 4px;
+  }
+}
+
+.ijs-form-editable-checkbox {
+  display: flex;
+  flex-direction: row;
+
+  input {
+    &[type='checkbox'] {
+      margin: 5px 5px 0 0;
+    }
+
+    &[type='text'] {
+      flex: 1;
+    }
+  }
+}
+
+
+.ijs-alert {
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+
+  &.ijs-alert-error {
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
+  }
+
+  &.ijs-alert-success {
+    background-color: #dff0d8;
+    border-color: #d0e9c6;
+    color: #3c763d;
+  }
+
+  &.ijs-alert-warning {
+    background-color: #fcf8e3;
+    border-color: #faf2cc;
+    color: #8a6d3b;
+  }
+
+  &.ijs-alert-info {
+    background-color: #d9edf7;
+    border-color: #bcdff1;
+    color: #31708f;
+  }
+}

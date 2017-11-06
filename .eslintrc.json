@@ -1,0 +1,88 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:jest/recommended"
+    ],
+    "parser": "babel-eslint",
+    "plugins": [
+        "react",
+        "jest"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "ecmaFeatures": {
+            "classes": true,
+            "jsx": true
+        }
+    },
+    "rules": {
+        "no-console": "off",
+        "class-methods-use-this": "off",
+        "arrow-body-style": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 100,
+                "ignoreTemplateLiterals": true,
+                "ignoreRegExpLiterals": true,
+                "ignoreComments": true,
+                "ignoreStrings": true
+            }
+        ],
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "react/jsx-filename-extension": "error",
+        "react/prop-types": "off",
+        "react/prefer-stateless-function": "off",
+        "prefer-arrow-callback": [
+            "error",
+            {
+                "allowNamedFunctions": true
+            }
+        ],
+        "prefer-destructuring": [
+            "error",
+            {
+                "object": true,
+                "array": false
+            }
+        ],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": [
+                    "**/*.test.{js,jsx}",
+                    "webpack/**/*.js",
+                    "jest-setup.js",
+                    "jest-shim.js"
+                ]
+            }
+        ],
+        "no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ]
+    },
+    "settings": {
+        "import/extensions": [".js", ".jsx"],
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".json"]
+            }
+        }
+    },
+    "globals": {
+        "fetch": true,
+        "__DEV__": true,
+        "__TEST__": true,
+        "__PROD__": true,
+        "__REDUX_DEVTOOLS_EXTENSION_COMPOSE__": true,
+        "API_HOST": true
+    },
+    "env": {
+      "browser": true,
+      "jest/globals": true
+    }
+}

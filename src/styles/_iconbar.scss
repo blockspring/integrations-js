@@ -1,0 +1,61 @@
+.ijs-icon-bar {
+  position: fixed;
+  background: #fff;
+  border: 1px solid rgb(163, 163, 163);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .06), 0 2px 32px rgba(0, 0, 0, .16);
+
+  // width: calc(#{$icon-bar-icon-size} + #{$icon-bar-padding} + #{$icon-bar-padding});
+  // padding: $icon-bar-padding;
+  // padding-right: 0;
+
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  // border-top-left-radius: 10px;
+  // border-bottom-left-radius: 10px;
+
+  transition: top .1s, transform .1s;
+
+  &:empty {
+    display: none;
+  }
+
+  .ijs-icon-bar-button {
+    text-align: center;
+    margin: $icon-bar-padding;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+
+    img {
+      height: $icon-bar-icon-size;
+      width: $icon-bar-icon-size;
+    }
+
+    .ijs-icon-bar-button-indicator {
+      width: 4px;
+      height: $icon-bar-icon-size;
+      position: absolute;
+      right: -$icon-bar-padding;
+      top: 0;
+      background-color: #080;
+      display: none;
+    }
+
+    &.ijs-icon-bar-button-selected {
+      .ijs-icon-bar-button-indicator {
+        display: block;
+      }
+    }
+  }
+}
+
+.ijs-side-bar-open {
+  .ijs-icon-bar {
+    top: 0;
+    bottom: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transform: none;
+  }
+}
