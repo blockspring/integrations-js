@@ -11,6 +11,10 @@
   right: calc(#{$icon-bar-icon-size} + #{$icon-bar-padding} + #{$icon-bar-padding} + 2px);
 
   display: none;
+
+  .ijs-integration {
+    height: 100%;
+  }
 }
 
 .ijs-side-bar-open {
