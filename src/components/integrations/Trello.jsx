@@ -130,7 +130,7 @@ class Trello extends Base {
             />
             Sign in with {this.props.integration.name}
           </button>
-          <h5 className="ijs-oauth-header">{this.props.integration.description}</h5>
+          <div className="ijs-oauth-header">{this.props.integration.description}</div>
         </CardSection>
       </CardBody>
     );

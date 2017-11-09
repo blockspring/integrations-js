@@ -16,6 +16,9 @@ class CardHeader extends React.Component {
       >
         { this.props.title }
         <button
+          style={{
+            color: this.props.textColor,
+          }}
           className="ijs-card-header-action"
           onClick={() => this.props.setCurrentIntegration(null)}
         >
