@@ -30,9 +30,11 @@ class Clearbit extends Base {
 
   componentWillUpdate(nextProps, nextState) {
     if (
-      nextState.credentials !== this.state.credentials ||
-      nextState.currentPersonId !== this.state.currentPersonId ||
-      nextProps.context !== this.props.context
+      nextState.credentials && (
+        nextState.credentials !== this.state.credentials ||
+        nextState.currentPersonId !== this.state.currentPersonId ||
+        nextProps.context !== this.props.context
+      )
     ) {
       // The user has authed
       // Sync in data?

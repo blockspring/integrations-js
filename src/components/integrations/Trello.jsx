@@ -33,8 +33,10 @@ class Trello extends Base {
 
   componentWillUpdate(nextProps, nextState) {
     if (
-      nextState.credentials !== this.state.credentials ||
-      nextProps.context !== this.props.context
+      nextState.credentials && (
+        nextState.credentials !== this.state.credentials ||
+        nextProps.context !== this.props.context
+      )
     ) {
       // The user has authed
       // Sync in data?
