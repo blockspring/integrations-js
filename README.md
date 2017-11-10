@@ -15,6 +15,8 @@ We also have some [frequently asked questions](https://blockspring-help.readme.i
 - **Trello:** let users sign in with Trello, and create cards given data on your page.
 - **Clearbit:** let users sign in with Clearbit, and lookup profile information about people mentioned on your page.
 
+![](https://i.imgur.com/eAdkwxm.gif)
+
 ## Security
 Blockspring takes security of our software very seriously. If you discover a security issue in the integrations.js project or the integrationsjs.com hosted service, please email the details to our security team at [security@integrationsjs.com](mailto:security@integrationsjs.com). We will respond to confirm the receipt of your message and follow up with a review of the issue and plan for mitigation. We follow responsible disclosure and will credit researchers when a security issue has been identified and mitigated.
 
